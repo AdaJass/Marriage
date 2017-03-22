@@ -1,38 +1,37 @@
 <!doctype html>
 <html class="no-js" lang="zh-cn">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{ title }}</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-        {% for item in main.css %}
-        <link rel="stylesheet" href="{{item}}">
-        {% endfor %}
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    {% for item in main.css %}
+    <link rel="stylesheet" href="{{item}}">
+    {% endfor %}
 
         {% for item in main.headerjs %}
-        <script src="{{item}}"></script>
-        {% endfor %}
+    <script src="{{item}}"></script>
+    {% endfor %}
 
         {% block css %}{% endblock %}
-    </head>
-    <body style="background-color: #fff;">
-        <div id="wrapper">
-            <div id="main">                
-                {% block content %}{% endblock %}
-            </div>
+</head>
+<body style="/*background-image: url(/images/bgpic.jpg); background-size:cover; background-repeat: no-repeat;*/background-color: #fff;">
+    <div class="row" style="background: #000;">
+        <div class="col-xs-6 col-sm-4"><br>dddd<br></div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    </div>
 
-        </div>
-
-        {% for item in main.footerjs %}
-        <script src="{{item}}"></script>
-        {% endfor %}
+    <div id="wrapper">{% block content %}{% endblock %}</div>
+    {% for item in main.footerjs %}
+    <script src="{{item}}"></script>
+    {% endfor %}
 
         {% block js %}{% endblock %}
-
-    
-    </body>
+</body>
 </html>

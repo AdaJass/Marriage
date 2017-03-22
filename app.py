@@ -46,8 +46,10 @@ async def init(loop):
         loader=jinja2.FileSystemLoader('./view'))
 
     app.router.add_route('GET', '/', mainpage.showMainPage)
-    #app.router.add_route('POST','/logout', logout)
-    # app.router.add_route('GET','/private/respond_data', hot.graphData)
+
+    app.router.add_route('GET', '/productbuyer', mainpage.showBuyerPage)
+    app.router.add_route('GET', '/productseller', mainpage.showSellerPage)
+    app.router.add_route('GET', '/productmatchlist', mainpage.showMatchList)
     app.router.add_static('/static/', './bower_components')
     # app.router.add_static('/statics/', './node_modules')
     app.router.add_static('/','./public')
