@@ -1,0 +1,70 @@
+{% extends 'layout.jinja2' %}
+{% block content %}
+<div class="container">
+  <form class="form-signin" action="/match_item" method="post">
+    <div class="form-inline">
+      <label class="control-label" for="user_id">客户ID</label>
+      <input type="text" readonly="true" class="form-control" name="userId" id="user_id">
+      <label class="control-label" for="phone">联系电话</label>
+      <input type="text" readonly="true" class="form-control" name="phone" id="phone">
+      <label class="control-label" for="credit">信用评级</label>
+      <input type="text" readonly="true" class="form-control" name="credit" id="credit"></div>
+    <br>
+    <label class="control-label" for="buyorsell">卖方或买方</label>
+    <div class="radio" id="buyorsell">
+      <label>
+        <input type="radio"  name="userType" value="buy" checked>我是买方&nbsp;&nbsp;&nbsp;</label>
+      <label>
+
+        <input type="radio"  name="userType" value="sell">我是卖方</label>
+    </div>
+    <label>服务类型</label>
+    <div class="radio">
+      <label>
+        <input type="radio"  name="serverType" value="active" checked>上门服务&nbsp;&nbsp;&nbsp;</label>
+      <label>
+        <input type="radio"  name="serverType" value="passive" >等待服务</label>
+    </div>
+    
+    <label class="control-label" for="detail_location">具体位置</label>
+    <input type="text"  class="form-control" name="detailLocation" id="detail_location" >
+    <br>
+
+    <label class="control-label" for="product_name">产品名称</label>
+    <input type="text" class="form-control" name="productName" id="product_name">
+    <br>
+    <div class="form-inline">
+      <label class="control-label" for="unit_price">产品单价</label>
+
+      <input type="text" class="form-control" name="unitPrice" id="unit_price"
+      onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+      元每&nbsp;
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">市斤</label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">千克</label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">两</label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">吨</label>
+    </div>
+    <label class="control-label" for="time_valid">有效时间范围</label>
+    <div class="form-inline" id="time_valid">
+      <input type="text" name="day" value="0">
+      <label>&nbsp;天&nbsp;</label>
+      <input type="text" name="hour" value="0">
+      <label>&nbsp;小时&nbsp;</label>
+    </div>
+
+    <br>
+    <label class="control-label" for="others">其它</label>
+    <input type="text" class="form-control" name="others" id="others">
+    <br>
+    <label class="control-label" for="detail">详细描述</label>
+    <br>
+    <textarea rows="5" cols="50"></textarea>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+</div>
+{% endblock %}
