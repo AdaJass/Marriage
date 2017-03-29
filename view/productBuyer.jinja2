@@ -10,7 +10,8 @@
       <label class="control-label" for="credit">信用评级</label>
       <input type="text" readonly="true" class="form-control" name="credit" id="credit"></div>
     <br>
-    
+
+
     {# <label class="control-label" for="buyorsell">卖方或买方</label>
     <div class="radio" id="buyorsell">
       <label>
@@ -27,7 +28,7 @@
       <label>
         <input type="radio"  name="serverType" value="passive" >等货上门</label>
     </div>
-    
+
     <label class="control-label" for="detail_location">具体位置</label>
     <input type="text"  class="form-control" name="detailLocation" id="detail_location" >
     <br>
@@ -36,7 +37,7 @@
     <input type="text" class="form-control" name="productName" id="product_name">
     <br>
     <div class="form-inline">
-      <label class="control-label" for="unit_price">产品单价</label>
+      <label class="control-label" for="unit_price">可接受单价范围</label>
 
       <input type="text" class="form-control" name="unitPrice" id="unit_price"
       onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">

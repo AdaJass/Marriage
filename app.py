@@ -8,11 +8,12 @@ from model import *
 import mainpage
 
 # async def middleware_factory(app, handler):
-#     async def middleware_handler(request):        
+#     async def middleware_handler(request):
 #         return await handler(request)
 #     return sss
 
-# async def logout(request): 
+
+# async def logout(request):
 #     data={}
 #     data['title']='登录'
 #     data['main']=static.assets
@@ -21,7 +22,7 @@ import mainpage
 #                                               data)
 #     res.set_cookie('Authentication','logout')
 #     return res
-    
+
 @asyncio.coroutine
 def Database(future):
     '''
@@ -37,7 +38,7 @@ def Database(future):
 @asyncio.coroutine
 def CloseDB():
     engine.close()
-    yield from engine.wait_closed()    
+    yield from engine.wait_closed()
     pass
 # web.run_app(app,port=9999)
 async def init(loop):
@@ -54,19 +55,19 @@ async def init(loop):
     # app.router.add_static('/statics/', './node_modules')
     app.router.add_static('/','./public')
     srv = await loop.create_server(
-        app.make_handler(), '0.0.0.0', 80)
-    print('Sever starts at port: 80')
+        app.make_handler(), '0.0.0.0', 8000)
+    print('Sever starts at port: 8000')
     return srv
 
-if __name__ == '__main__':    
+if __name__ == '__main__':
     loop = asyncio.get_event_loop()
     # future = asyncio.Future()
     # asyncio.ensure_future(Database(future))
     # loop.run_until_complete(future)
-    # engine = future.result() 
+    # engine = future.result()
 
-    # hot.initialDatabase(engine)      
-    
+    # hot.initialDatabase(engine)
+
     loop.run_until_complete(init(loop))
     try:
         loop.run_forever()
