@@ -2,7 +2,7 @@
   Marriage is a platform that help to make information match.
 ## Requirements & Installation
 
-  **python3:**This web server runs on [python3.4+](https://www.python.org/downloads/release/python-352/). So you must have python3.4 or later version installed.
+  **python3**This web server runs on [python3.4+](https://www.python.org/downloads/release/python-352/). So you must have python3.4 or later version installed.
 
   **node&npm** [node&npm](https://nodejs.org/en/) npm may be initially contained in node.
 
@@ -16,7 +16,8 @@
   **js packages**
   cd to the project directory and run `bower install`
 
-  ##run the server
+##run the server
+
   cd to the project directory and run `python app.py`
 
   
