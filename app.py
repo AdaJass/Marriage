@@ -3,8 +3,6 @@ from aiohttp import web
 import aiohttp_jinja2
 import jinja2
 import staticfile as static
-from aiomysql.sa import create_engine
-from model import *
 import mainpage
 
 # async def middleware_factory(app, handler):
